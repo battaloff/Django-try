@@ -41,8 +41,8 @@ class TaskList(models.Model):
     operator = models.CharField("Вывел", max_length=255, choices=OPERATOR_CHOICES, blank=True)
     ready_datetime = models.DateTimeField(null=True, blank=True, auto_now=True, verbose_name='Время готовности')
 
-    def __int__(self):
-        return self.id
+    def __str__(self):
+        return self.file_name
 
     class Meta:
         verbose_name = "Задание"
